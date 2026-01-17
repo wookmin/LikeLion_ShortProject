@@ -10,14 +10,14 @@ function Diary() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const all = JSON.parse(localStorage.getItem(KEY)) || {};
-    setText(all[date] || "");
+    const diaries = JSON.parse(localStorage.getItem(KEY)) || {};
+    setText(diaries[date] || "");
   }, [date]);
 
   const saveDiary = () => {
-    const all = JSON.parse(localStorage.getItem(KEY)) || {};
-    all[date] = text;
-    localStorage.setItem(KEY, JSON.stringify(all));
+    const diaries = JSON.parse(localStorage.getItem(KEY)) || {};
+    diaries[date] = text;
+    localStorage.setItem(KEY, JSON.stringify(diaries));
   };
   
   const navigateToHome = () => {
